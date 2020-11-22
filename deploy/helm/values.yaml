@@ -1,0 +1,23 @@
+image:
+  repository: chrisjohnson00/solaredge-prometheus-exporter
+  pullPolicy: IfNotPresent
+appVersion: initial
+containerPort: 8080
+nameOverride: solaredge-prometheus-exporter
+fullnameOverride: solaredge-prometheus-exporter
+resources:
+  limits:
+    cpu: 100m
+    memory: 100Mi
+  requests:
+    cpu: 20m
+    memory: 60Mi
+env:
+  - name: API_KEY
+    value: PUT_YOUR_KEY_HERE
+  - name: TZ
+    value: America/Los_Angeles
+deploymentTemplateAnnotations:
+  prometheus.io/path: /metrics
+  prometheus.io/port: '8080'
+  prometheus.io/scrape-slow: 'true'
