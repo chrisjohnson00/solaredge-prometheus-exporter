@@ -1,0 +1,85 @@
+name: Create Release
+
+on:
+  push:
+    branches: [ 'main' ]
+
+jobs:
+  create_release:
+    runs-on: ubuntu-18.04
+    name: Create Release
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Determine next version
+        id: tag_version_dry_run
+        uses: mathieudutour/github-tag-action@v5
+        with:
+          github_token: ${{ secrets.PAT_REPO_ONLY }}
+          release_branches: main
+          default_bump: patch
+          dry_run: True
+      - name: Update appVersion in the Helm Chart values.yaml
+        uses: fjogeleit/yaml-update-action@0.1.0
+        with:
+          valueFile: 'deploy/helm/values.yaml'
+          propertyPath: 'appVersion'
+          value: ${{ steps.tag_version_dry_run.outputs.new_tag }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+          message: "chore: Updating helm chart values.yaml to use latest tag"
+          createPR: false
+      - name: Update image in the k8s deployment.yaml
+        uses: fjogeleit/yaml-update-action@0.1.0
+        with:
+          valueFile: 'deploy/manifests/deployment.yaml'
+          propertyPath: 'spec.template.spec.containers.image'
+          value: chrisjohnson00/solaredge-prometheus-exporter:${{ steps.tag_version_dry_run.outputs.new_tag }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+          message: "chore: Updating container versions in deployment.yaml to use the latest tag"
+          createPR: false
+      - name: Update metadata.labels.version in the k8s deployment.yaml
+        uses: fjogeleit/yaml-update-action@0.1.0
+        with:
+          valueFile: 'deploy/manifests/deployment.yaml'
+          propertyPath: 'metadata.labels.version'
+          value: ${{ steps.tag_version_dry_run.outputs.new_tag }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+          message: "chore: Updating metadata labels in deployment.yaml to use the latest tag"
+          createPR: false
+      - name: Update spec.template.metadata.labels.version in the k8s deployment.yaml
+        uses: fjogeleit/yaml-update-action@0.1.0
+        with:
+          valueFile: 'deploy/manifests/deployment.yaml'
+          propertyPath: 'spec.template.metadata.labels.version'
+          value: ${{ steps.tag_version_dry_run.outputs.new_tag }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+          message: "chore: Updating template metadata labels in deployment.yaml to use the latest tag"
+          createPR: false
+      - name: Bump version and push tag
+        id: tag_version
+        uses: mathieudutour/github-tag-action@v5
+        with:
+          github_token: ${{ secrets.PAT_REPO_ONLY }}
+          release_branches: main
+          default_bump: patch
+      - name: Create a GitHub release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.tag_version.outputs.new_tag }}
+          release_name: ${{ steps.tag_version.outputs.new_tag }}
+          body: ${{ steps.tag_version.outputs.changelog }}
+      - name: Generate changelog
+        uses: charmixer/auto-changelog-action@v1.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          release_branch: main
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "chore: Generating CHANGELOG.md for ${{ steps.tag_version.outputs.new_tag }}"
+          file_pattern: CHANGELOG.md
