@@ -1,7 +1,7 @@
 image:
   repository: chrisjohnson00/solaredge-prometheus-exporter
   pullPolicy: IfNotPresent
-appVersion: initial
+appVersion: latest
 containerPort: 8080
 nameOverride: solaredge-prometheus-exporter
 fullnameOverride: solaredge-prometheus-exporter
