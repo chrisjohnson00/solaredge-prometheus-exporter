@@ -1,5 +1,14 @@
 # Changelog
 
+## [v0.0.3](https://github.com/chrisjohnson00/solaredge-prometheus-exporter/tree/v0.0.3) (2020-11-28)
+
+[Full Changelog](https://github.com/chrisjohnson00/solaredge-prometheus-exporter/compare/v0.0.2...v0.0.3)
+
+**Merged pull requests:**
+
+- chore\(ci\): Updating ci to fix a yaml error, adding actions yaml lint [\#6](https://github.com/chrisjohnson00/solaredge-prometheus-exporter/pull/6) ([chrisjohnson00](https://github.com/chrisjohnson00))
+- chore\(ci\): Fixing auto release flow to not include yaml updates since… [\#3](https://github.com/chrisjohnson00/solaredge-prometheus-exporter/pull/3) ([chrisjohnson00](https://github.com/chrisjohnson00))
+
 ## [v0.0.2](https://github.com/chrisjohnson00/solaredge-prometheus-exporter/tree/v0.0.2) (2020-11-28)
 
 [Full Changelog](https://github.com/chrisjohnson00/solaredge-prometheus-exporter/compare/v0.0.1...v0.0.2)
@@ -19,7 +28,6 @@
 **Merged pull requests:**
 
 - revert: Downgrading tag action [\#4](https://github.com/chrisjohnson00/solaredge-prometheus-exporter/pull/4) ([chrisjohnson00](https://github.com/chrisjohnson00))
-- chore\(ci\): Fixing auto release flow to not include yaml updates since… [\#3](https://github.com/chrisjohnson00/solaredge-prometheus-exporter/pull/3) ([chrisjohnson00](https://github.com/chrisjohnson00))
 - chore: bump mathieudutour/github-tag-action from v5 to v5.1 [\#2](https://github.com/chrisjohnson00/solaredge-prometheus-exporter/pull/2) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 
