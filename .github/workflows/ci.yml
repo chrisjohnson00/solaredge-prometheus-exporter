@@ -51,3 +51,17 @@ jobs:
           yamllint_config_filepath: '.yamllint'
         env:
           GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  actionslint:
+    name: 'Actions Yaml Lint'
+    runs-on: ubuntu-18.04
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v2
+      - name: 'Actions Yaml Lint'
+        uses: karancode/yamllint-github-action@v2.0.0
+        with:
+          yamllint_file_or_dir: '.github/workflows'
+          yamllint_comment: true
+          yamllint_config_filepath: '.yamllint'
+        env:
+          GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
