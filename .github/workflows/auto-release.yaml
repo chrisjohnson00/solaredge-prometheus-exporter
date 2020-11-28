@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Determine next version
         id: tag_version_dry_run
-        uses: mathieudutour/github-tag-action@v5
+        uses: mathieudutour/github-tag-action@v5.1
         with:
           github_token: ${{ secrets.PAT_REPO_ONLY }}
           release_branches: main
@@ -61,7 +61,7 @@ jobs:
           createPR: false
       - name: Bump version and push tag
         id: tag_version
-        uses: mathieudutour/github-tag-action@v5
+        uses: mathieudutour/github-tag-action@v5.1
         with:
           github_token: ${{ secrets.PAT_REPO_ONLY }}
           release_branches: main
