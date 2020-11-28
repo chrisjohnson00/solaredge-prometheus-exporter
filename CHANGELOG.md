@@ -1,5 +1,14 @@
 # Changelog
 
+## [v0.0.6](https://github.com/chrisjohnson00/solaredge-prometheus-exporter/tree/v0.0.6) (2020-11-28)
+
+[Full Changelog](https://github.com/chrisjohnson00/solaredge-prometheus-exporter/compare/v0.0.5...v0.0.6)
+
+**Merged pull requests:**
+
+- chore\(ci\): Fixing CI to generate the changelog in the release [\#10](https://github.com/chrisjohnson00/solaredge-prometheus-exporter/pull/10) ([chrisjohnson00](https://github.com/chrisjohnson00))
+- chore\(ci\): Fixing CI to generate the changelog in the release [\#9](https://github.com/chrisjohnson00/solaredge-prometheus-exporter/pull/9) ([chrisjohnson00](https://github.com/chrisjohnson00))
+
 ## [v0.0.5](https://github.com/chrisjohnson00/solaredge-prometheus-exporter/tree/v0.0.5) (2020-11-28)
 
 [Full Changelog](https://github.com/chrisjohnson00/solaredge-prometheus-exporter/compare/v0.0.4...v0.0.5)
