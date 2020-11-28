@@ -22,7 +22,7 @@ Update `deploy/manifests/deployment.yaml` for your timezone and API key, then ru
 
 ### Docker
 
-   docker run -d -e API_KEY=YOUR_KEY -e TZ=YOURTZ -p 8080:8080 chrisjohnson00/solaredge-prometheus-exporter
+    docker run -d -e API_KEY=YOUR_KEY -e TZ=YOURTZ -p 8080:8080 chrisjohnson00/solaredge-prometheus-exporter
 
 
 ## Prometheus configuration
