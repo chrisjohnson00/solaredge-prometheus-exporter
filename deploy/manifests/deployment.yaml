@@ -33,7 +33,7 @@ spec:
               value: PUT_YOUR_KEY_HERE
             - name: TZ
               value: America/Los_Angeles
-          image: 'chrisjohnson00/solaredge-prometheus-exporter:initial'
+          image: 'chrisjohnson00/solaredge-prometheus-exporter:latest'
           imagePullPolicy: IfNotPresent
           livenessProbe:
             failureThreshold: 3
