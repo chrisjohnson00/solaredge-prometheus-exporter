@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.0.7](https://github.com/chrisjohnson00/solaredge-prometheus-exporter/tree/v0.0.7) (2020-12-03)
+
+[Full Changelog](https://github.com/chrisjohnson00/solaredge-prometheus-exporter/compare/v0.0.6...v0.0.7)
+
+**Fixed bugs:**
+
+- fix: Corrected an issue with API responses with no values close to th… [\#12](https://github.com/chrisjohnson00/solaredge-prometheus-exporter/pull/12) ([chrisjohnson00](https://github.com/chrisjohnson00))
+
 ## [v0.0.6](https://github.com/chrisjohnson00/solaredge-prometheus-exporter/tree/v0.0.6) (2020-11-28)
 
 [Full Changelog](https://github.com/chrisjohnson00/solaredge-prometheus-exporter/compare/v0.0.5...v0.0.6)
