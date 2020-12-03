@@ -19,6 +19,15 @@ class SolarEdge:
         energy_details = self.client.sites.get_power(site_id, start_range,
                                                      end_range)
         values = energy_details['power']['values']
-        last_reading = values.pop()
-        last_value = 0 if last_reading['value'] is None else last_reading['value']
+        try:
+            last_reading = values.pop()
+            if last_reading['value'] is None:
+                print("Found a None")
+                last_reading = values.pop()
+            if last_reading['value'] is None:
+                last_value = 0
+            else:
+                last_value = last_reading['value']
+        except IndexError:
+            last_value = 0
         return str(last_value)
