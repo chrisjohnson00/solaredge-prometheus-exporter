@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: solaredge-prometheus-exporter
-    version: initial
+    version: latest
   name: solaredge-prometheus-exporter
   namespace: solaredge
 spec:
@@ -24,7 +24,7 @@ spec:
         prometheus.io/scrape-slow: 'true'
       labels:
         app: solaredge-prometheus-exporter
-        version: initial
+        version: latest
       name: solaredge-prometheus-exporter
     spec:
       containers:
