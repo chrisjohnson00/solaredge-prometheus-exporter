@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.0.8](https://github.com/chrisjohnson00/solaredge-prometheus-exporter/tree/v0.0.8) (2020-12-04)
+
+[Full Changelog](https://github.com/chrisjohnson00/solaredge-prometheus-exporter/compare/v0.0.7...v0.0.8)
+
+**Merged pull requests:**
+
+- chore\(docs\): updating native k8s deploy to use latest [\#13](https://github.com/chrisjohnson00/solaredge-prometheus-exporter/pull/13) ([chrisjohnson00](https://github.com/chrisjohnson00))
+
 ## [v0.0.7](https://github.com/chrisjohnson00/solaredge-prometheus-exporter/tree/v0.0.7) (2020-12-03)
 
 [Full Changelog](https://github.com/chrisjohnson00/solaredge-prometheus-exporter/compare/v0.0.6...v0.0.7)
