@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.0.9](https://github.com/chrisjohnson00/solaredge-prometheus-exporter/tree/v0.0.9) (2020-12-07)
+
+[Full Changelog](https://github.com/chrisjohnson00/solaredge-prometheus-exporter/compare/v0.0.8...v0.0.9)
+
+**Merged pull requests:**
+
+- chore: bump certifi from 2020.11.8 to 2020.12.5 [\#14](https://github.com/chrisjohnson00/solaredge-prometheus-exporter/pull/14) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v0.0.8](https://github.com/chrisjohnson00/solaredge-prometheus-exporter/tree/v0.0.8) (2020-12-04)
 
 [Full Changelog](https://github.com/chrisjohnson00/solaredge-prometheus-exporter/compare/v0.0.7...v0.0.8)
